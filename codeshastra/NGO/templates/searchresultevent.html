@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Welcome, {{user.username}}</h3>
+<table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Event</th>   
+                </tr>
+            </thead>
+            <tbody>
+            		{% for event in result %}
+                    <tr>
+                        <td><a href= "/12349876{{event.id}}/">{{ event.name }}</td>
+                            
+                    </tr>
+                {% endfor %}
+                   
+            </tbody>
+        </table>
+{% endblock %}

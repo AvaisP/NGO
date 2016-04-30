@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Welcome, {{user.username}}</h3>
+<table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>District</th>  
+                </tr>
+            </thead>
+            <tbody>
+            		{% for school in result %}
+                    <tr>
+                        <td><a href= "{{school.id}}">{{ school.name }}</td>
+                        <td>{{ school.district }}</td>
+                    </tr>
+                {% endfor %}
+                   
+            </tbody>
+        </table>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'alpha/reglog.html' %}
+{% load static %}
+
+	{% block block_title %}Register{% endblock %}
+
+{% block block_content %}
+	
+	{% if registered %}
+		<div class = "login" >
+			<strong>Your registration is successful!</strong><br /><br />
+			<a style = "color: white; text-decoration: none;" href="/index"><button class="btn btn-primary btn-block btn-large pull-left">Home</button></a><br />
+			<a style = "color: white; text-decoration: none;" href="/sponsor"><button class="btn btn-primary btn-block btn-large pull-left">Sponsor</button></a><br />
+		</div>
+	{% else %}
+		{% csrf_token %}
+		<a style = "color: white; text-decoration: none;background: none;max-width: 15%;" href="/logmein/"><button class="btn pull-right">Login</button></a><br />			
+		<div class="login" style="margin-top: -200px;">
+			<h1>Register</h1>
+	    	<form method="post" action="">
+
+				{% for field in user_form %}
+					{{ field.errors }}
+					{{ field }}
+				{% endfor %}
+
+				{% for field in profile_form %}
+					{{field.errors }}
+					{{ field }}
+				{% endfor %}
+
+						<!-- Provide a button to click to submit the form. -->
+						<!--<input type="text" name="u" placeholder="Username" required="required" />
+	        			<input type="password" name="p" placeholder="Password" required="required" />-->
+	        	<button type="submit" class="btn btn-primary btn-block btn-large">Sign Me Up</button>
+			</form>
+		</div>
+		
+	{% endif %}
+{% endblock %}

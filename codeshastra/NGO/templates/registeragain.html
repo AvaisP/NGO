@@ -1,0 +1,43 @@
+{% extends 'alpha/reglog.html' %}
+{% load static %}
+
+	{% block block_title %}Register with Rango {% endblock %}
+
+{% block block_content %}
+
+	{% if registered %}
+		<strong>Thank you for registering!</strong>
+		<a href="/index">Return to the homepage.</a><br />
+		<a href="/contribute">Proceed to Contribute</a><br />
+	{% else %}
+		{% csrf_token %}
+					
+		<div class="login" style="margin-top: -200px;">
+			<h1>Register</h1>
+			<p>{{ message }}</p>
+	    	<form method="post" action="">
+
+				{% for field in user_form %}
+					{{ field.errors }}
+					<!--<p style="color: white">Here lies input field</p>-->
+					{{ field }}
+					<!--<input type="text" name="u" placeholder='{{ field.help_text }}' required="required" />-->
+					<br />
+				{% endfor %}
+
+				{% for field in profile_form %}
+					{{field.errors }}
+					{{ field }}
+					<!--<p style="color: white">Here lies mobile field</p>-->
+					<!--<input type="text" name="u" placeholder='10-digit mobile number' required="required" /><br />-->
+				{% endfor %}
+
+						<!-- Provide a button to click to submit the form. -->
+						<!--<input type="text" name="u" placeholder="Username" required="required" />
+	        			<input type="password" name="p" placeholder="Password" required="required" />-->
+	        	<button type="submit" class="btn btn-primary btn-block btn-large">Sign Me Up</button>
+			</form>
+		</div>
+		
+	{% endif %}
+{% endblock %}

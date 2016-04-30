@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Welcome, {{user.username}}</h3>
+<table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>School</th>
+                    <th>Location</th>
+                    <th>Days Present</th>
+                    <th>Total Days</th>
+                    <th>Marks</th>
+                    <th>Sponsored</th>   
+                </tr>
+            </thead>
+            <tbody>
+            		{% for student in result %}
+                    <tr>
+                        <td><a href= "{{student.id}}">{{ student.name }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>{{ student.school.name }}</td>
+                        <td>{{ student.location }}</td>
+                        <td>{{ student.days_present }} <a href = "/incrementdayspresent/{{ student.id }}/98761234{{student.school.name}}/">+</a></td>
+                        <td>{{ student.days_total }} <a href = "/incrementtotaldays/{{ student.id }}/98761234{{student.school.name}}/">+</a></td>
+                        <td>{{ student.marks }}</td>
+                        <td>{{ student.sponsored }}</td>
+                            
+                    </tr>
+                {% endfor %}
+                   
+            </tbody>
+        </table>
+{% endblock %}

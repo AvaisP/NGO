@@ -1,0 +1,29 @@
+{% extends 'reglog.html' %}
+{% load static %}
+
+	{% block block_title %}Login{% endblock %}
+
+{% block block_content %}
+	
+		{% if registered %}
+			<div class = "login" style = "text-align: center;">
+				<strong>Your login is successful!</strong><br /><br />
+				<a style = "color: white; text-decoration: none;" href="/index"><button class="btn btn-primary btn-block btn-large pull-left">Home</button></a><br />
+				<a style = "color: white; text-decoration: none;" href="/sponsor"><button class="btn btn-primary btn-block btn-large pull-left">Sponsor</button></a><br />
+			</div>
+		{% else %}
+			
+				
+			<div class="login" style="margin-top: -200px;">
+				<h1>Login</h1>
+		    	<form method="post" action="">
+		    	{% csrf_token %}
+							<!-- Provide a button to click to submit the form. -->
+					<input type="text" name="u" placeholder="Username" required="required" />
+		        	<input type="password" name="p" placeholder="Password" required="required" />
+		        	<button type="submit" class="btn btn-primary btn-block btn-large">Log Me In</button>
+				</form>
+			</div>
+		{% endif %}
+	
+{% endblock %}

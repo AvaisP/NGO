@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <div class="userform col-md-offset-4 col-xs-offset-4 col-md-4">
+    <form method="post" class="post-form">
+        {% csrf_token %}
+        <h2>Search</h2>
+        <div class="form-group ">
+        <label for="keyword">Search:</label>
+        <input type="text" class="form-control" name ="keyword" id = 'keyword'/>
+        </div>
+        <br/>
+        <div >
+        <button type="submit" class="form-control loginbtn btn btn-danger">Search</button>
+        </div>
+    </form>
+    </div>
+    {% else %}
+        <h3>You need to login.</h3>    
+    {% endif %}
+
+{% endblock %}
+
+

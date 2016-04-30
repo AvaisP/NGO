@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+        {% block block_title %}Sponsor{% endblock %}
+        {% block block_css %}
+            <!-- Bootstrap -->
+            <link rel="stylesheet" type="text/css" href='{% static "assets/css/bootstrap.min.css" %}'>
+            
+            <!-- Main Style -->
+            <link rel="stylesheet" type="text/css" href='{% static "assets/css/main.css" %}'>
+
+            <!--Icon Fonts-->
+            <link rel="stylesheet" media="screen" href='{% static "assets/fonts/font-awesome/font-awesome.min.css"  %}'/>
+              <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+              
+              <style>
+              #help
+                  { 
+                      font-size:10em;
+                  }
+                  #sub
+                  {
+                      padding-top: 20px;
+                  }
+                  #s
+                  {
+                      width:200px;
+                      height:100px;
+                  }
+                  #d
+                  {
+                      width:200px;
+                      height:100px;
+                  }
+                  #don
+                  {
+                      padding-top: 20px;
+                  }
+                  #do
+                  {
+                      width:200px;
+                      height:100px;
+                  }
+                  #donate
+                  {
+                      position: relative;
+                      top:-30px;
+                      padding-top:20px;
+                  }
+                  
+              </style> 
+          </head>
+        {% endblock %}
+
+        {% block block_content %}
+        {% if user.is_authenticated %}
+          <a style = "color: white; text-decoration: none;background: none;max-width: 15%;" href="/logmein/"><button class="btn pull-right">Login</button></a><br />
+        {% else %}
+
+        {% endif %}    
+     	<!-- Pricing Table Section -->
+        <section id="pricing-table">
+            <div class="container">
+                <div class="row">
+                    <div class="pricing">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title" style="font-size:4em">Time</p>
+                                    <p class="pricing-rate" style="font-size:1.5em ">Help us out</p>
+                                          <div class="form-group" id="sub">
+                  <input type="submit" value="Help" class="btn btn-success" id="s" name="login"/>
+                 </div>
+                                    <script>
+        $("#s").click(function(){
+window.location.replace("sponsor_3.html")
+      })
+    </script>
+                                </div>
+
+                                <div class="pricing-list">
+                                    <ul>
+                                        <li><i class="fa fa-envelope"></i>Available slot updates via email.</li>
+                                                                <li><i class="fa fa-user"></i>Volunteers login with their unique id</li>
+                                        <li><i class="fa fa-smile-o"></i>We care about our volunteers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title"style="font-size:3em">Resources</p>
+                                    <p class="pricing-rate" style="font-size:1.5em">Donate.</p>
+                                     <div class="form-group" id="don">
+                  <input type="submit" value="Donate Now!" class="btn btn-success" id="d" name="login"/>
+                  </div>
+                                    <script>
+        $("#d").click(function(){
+window.location.replace("sponsor_3.html")
+      })
+    </script>
+                                    
+                                </div>
+
+                                <div class="pricing-list">
+                                    <ul>
+                                        <li><i class="fa fa-envelope"></i>Update of delivery of donated goods.</li>
+                                        <li><i class="fa fa-user"></i>Volunteers can opt to donate anything.</li>
+                                        <li style="padding-bottom:20px;"><i class="fa fa-smile-o"></i>Smiles everywhere.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="pricing-table">
+                                <div class="pricing-header">
+                                    <p class="pricing-title">Monetary Donation</p>
+                                    <p class="pricing-rate"><sup>Rs</sup> 50</p>
+                                    <div class="form-group" id="donate">
+                  <input type="submit" value="Donate." class="btn btn-success" id="do" name="login"/>
+                  </div>
+                                    <script>
+        $("#do").click(function(){
+window.location.replace("sponsor_3.html")
+      })
+    </script>
+                                </div>
+
+                                <div class="pricing-list">
+                                    <ul>
+                        <li style="padding-bottom:63px;"><i class="fa fa-smile-o"></i>Help us spread smiles.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- Pricing Table Section End -->
+{% endblock %}

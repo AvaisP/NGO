@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h4> Add New Student</h4>
+    <form method="post">
+        {% csrf_token %}
+        <input id="ExamName" type="text" name = "ExamName" />
+        <input id="Marks" type="number" name = "Marks">
+        <button type="submit" class="btn btn-default">Save</button>
+    </form>
+
+{% endblock %}

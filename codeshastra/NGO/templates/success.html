@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block block_title %}Successful Request{% endblock %}
+	
+{% block block_content %}	
+	
+	
+	
+	
+	<div class = "col-md-4"></div>
+	<div class = "col-md-4" style="text-decoration: none;font-weight: bold;font-size: 20px;float: center; border: solid 5px #ce96a6;border-radius: 7px;"><h1 style="text-align: center;">Success</h1>
+		<strong>Request for sponsorship approved</strong><br />
+	</div>
+	<div class = "col-md-4"></div>
+	<hr>
+	<div class = "col-md-4"></div>
+	<div class = "col-md-4">
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="JV7PMJFUBLZNS">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+	</form>
+	</div>
+	<div class = "col-md-4"></div>
+{% endblock %}

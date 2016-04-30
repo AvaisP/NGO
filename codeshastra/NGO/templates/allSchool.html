@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <h3>
+            List of schools:
+        </h3>
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>School</th>
+                    <th>District</th>   
+                </tr>
+            </thead>
+            <tbody>
+                {% for school in schools %}
+                    <tr>
+                        <td><a href= "/98761234{{school.name}}/">{{ school.name }}</td>
+                        <td>{{ school.district }}</td>
+                            
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        <h4>Want to search for a school?<a href="/searchSchool/">Click here.</a></h4>
+        {% if user.is_superuser %}
+        <h4>Want to add a new school?<a href="/addnewschool/">Click here.</a></h4>
+        {% endif %}
+    </div>    
+{% endblock %}
